@@ -6,23 +6,26 @@ public class EmployeeWage {
         int fullTime = 1;
         int perHourWage = 20;
         int partTime = 2;
-        double check = Math.floor(Math.random() * 10) % 3;
-        if (check == fullTime) {
+        int check =(int) Math.floor(Math.random() * 10) % 3;
+        switch (check){
+            case 1:
             System.out.println("Emp Present");
             int Hrs = 8;
             int salary = perHourWage * Hrs;
             System.out.println("Salary Amount: " +salary);
-        } if (check == partTime){
+            break;
+            case 2:
             System.out.println("Emp present in Part Time");
-            int Hrs = 8;
-            int salary = partTime * Hrs;
+            Hrs = 4;
+            salary = partTime * Hrs;
             System.out.println("Part Time Salary " +salary);
-        }
-        else {
+            break;
+            default:
             System.out.println("Emp Absent");
-            int Hrs = 0;
-            int salary = perHourWage * Hrs;
+            Hrs = 0;
+            salary = perHourWage * Hrs;
             System.out.println("Salary Amount: " +salary);
+            break;
         }
     }
 }
